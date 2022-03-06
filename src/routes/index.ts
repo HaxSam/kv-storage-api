@@ -3,6 +3,6 @@ import storage from "./storage";
 
 const router = new Router();
 
-router.use("/storage", storage);
+router.use("/v", storage);
 
 export default router;
