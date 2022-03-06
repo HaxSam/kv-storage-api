@@ -3,8 +3,9 @@ import Router from "../utilities/router";
 const router = new Router();
 
 function auth(request: Request) {
-	const unauthorized = async () => new Response("Unauthorized", {
+	const unauthorized = async () => new Response("Authorization needed", {
 		status: 401,
+		statusText: "Unauthorized.",
 	});
 
 	if (request.method == "GET")
@@ -30,14 +31,14 @@ router.get("/*", async (request) => {
 	const pathname = new URL(request.url).pathname;
 	const keyname = pathname.split("/v/")[1];
 
-	const value = await storage.get(keyname)
+	const value = await storage.get(keyname);
 
 	if (value == null)
 		return new Response("", { status: 404, statusText: "Not Found" });
 
 	return new Response(value, {
 		status: 200,
-		statusText: "OK"
+		statusText: "Ok."
 	});
 });
 
@@ -50,14 +51,14 @@ router.post("/*", async (request) => {
 	if (await storage.get(keyname) != null)
 		return new Response(`${keyname} already exists`, {
 			status: 409,
-			statusText: "Conflict"
+			statusText: "Conflict."
 		});
 
 	await storage.put(keyname, value);
 
 	return new Response(`Got created: ${keyname}`, {
 		status: 200,
-		statusText: "OK"
+		statusText: "Ok."
 	});
 });
 
@@ -70,14 +71,14 @@ router.put("/*", async (request) => {
 	if (await storage.get(keyname) == null)
 		return new Response(`${keyname} does not exist`, {
 			status: 404,
-			statusText: "Not Found"
+			statusText: "Not Found."
 		});
 
 	await storage.put(keyname, value);
 
 	return new Response(`Got updated: ${keyname}`, {
 		status: 200,
-		statusText: "OK"
+		statusText: "Ok."
 	});
 });
 
@@ -88,14 +89,14 @@ router.delete("/*", async (request) => {
 	if (await storage.get(keyname) == null)
 		return new Response(`${keyname} does not exist`, {
 			status: 404,
-			statusText: "Not Found"
+			statusText: "Not Found."
 		});
 
 	await storage.delete(keyname);
 
 	return new Response(`Got deleted: ${keyname}`, {
 		status: 200,
-		statusText: "OK"
+		statusText: "Ok."
 	});
 });
 
