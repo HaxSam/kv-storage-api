@@ -1,0 +1,16 @@
+name = "kv-storage"
+type = "javascript"
+zone_id = ""
+account_id = ""
+route = ""
+workers_dev = true
+compatibility_date = "2022-03-05"
+
+kv_namespaces = [
+	{ binding = "storage", id = "63a480d6f8d64fbca880895dbd1a53dd", preview_id = "63a480d6f8d64fbca880895dbd1a53dd" }
+]
+
+[build]
+command = "pnpm install && pnpm build"
+[build.upload]
+format = "service-worker"
