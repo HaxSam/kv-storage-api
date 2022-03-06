@@ -17,9 +17,9 @@ A API to use the Cloudfalre KV stoarge for easy and quick use to store Key-Value
 
 ## **Important**
 
-Got the idea thanks to [Whinee](https://github.com/whinee) with her orginal project [kv](https://github.com/whinee/kv) in plane Javascript
+Got the idea thanks to [Whinee](https://github.com/whinee) with her orginal project [kv](https://github.com/whinee/kv) in plain Javascript
 
-I worte my own KV API in Typescript and my own easy to use routing class
+I wrote my own KV API in Typescript and my own, easy to use routing class
 
 ## **Usage**
 
