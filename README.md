@@ -10,7 +10,7 @@
 ---
 
 <h4 align="center">
-A API to use the Cloudfalre KV stoarge for easy and quick use to store Key-Value
+A API to use the Cloudflare KV stoarge for easy and quick use to store Key-Value
 </h4>
 
 ---
